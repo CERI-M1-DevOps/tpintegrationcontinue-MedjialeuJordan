@@ -1,0 +1,23 @@
+name: Bonjour
+
+on: 
+  push:  # Déclencheur pour tous les `push`
+    branches:
+      - main  # Se déclenche uniquement sur les `push` vers la branche `main`
+
+jobs:
+  Salutations:
+    name: Salutations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3  # S'assure que le code est accessible
+      
+      - name: Hello
+        env:
+          personneASaluer: 'Mon voisin Totoro'
+        run: echo "Bonjour ${personneASaluer}"
+
+      - name: L'heure de salutation
+        run: echo "L'heure était $(date)."
