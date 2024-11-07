@@ -145,7 +145,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(1);
         listeATester.ajout(1);
         listeATester.supprimeTous(1);
-        assertEquals( "ListeSimple(Noeud(2))",listeATester.toString(),);
+        assertEquals( "ListeSimple(Noeud(2))",listeATester.toString());
         assertEquals(1, listeATester.getSize());
     }
 
