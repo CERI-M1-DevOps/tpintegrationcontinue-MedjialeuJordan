@@ -20,4 +20,4 @@ jobs:
           distribution: 'corretto'  # Utilise Temurin JDK
 
       - name: Build with Maven
-        run: mvn -B package  # Exécute Maven pour compiler et empaqueter le projet
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
